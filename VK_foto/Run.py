@@ -12,6 +12,7 @@ print(f'Для скачивания доступно {len(foto.max_size_foto(use
 count_foto = int(input('Сколько фото скачать? : '))
 if __name__ == '__main__':
     count = []
+    info = []
     for j, i in enumerate(foto.max_size_foto(user_ids)):
         if i[1]['count'] not in count:
             count.append(i[1]['count'])

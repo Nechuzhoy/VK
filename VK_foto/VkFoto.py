@@ -40,3 +40,4 @@ class VkApiFoto:
         return list_max_size_foto
 
 
+
