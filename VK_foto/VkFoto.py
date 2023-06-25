@@ -1,10 +1,13 @@
 import os
 import requests
+import time
+import Status_Http
 from dotenv import load_dotenv
 from operator import itemgetter
 from pprint import pprint
 
 load_dotenv()
+cod = Status_Http.Status_Cod()
 
 
 class VkApiFoto:
@@ -21,6 +24,7 @@ class VkApiFoto:
         params = {'owner_id': user_ids, 'extended': field,
                   **self.params}
         response = requests.get(metod_name, params=params)
+        cod.server_cod(response)
         return response.json()
 
     def sort_foto(self, user_ids):
@@ -36,6 +40,3 @@ class VkApiFoto:
         return list_max_size_foto
 
 
-if __name__ == '__main__':
-    vk = VkApiFoto()
-    pprint(vk.max_size_foto(int(input())))

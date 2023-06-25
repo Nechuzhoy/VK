@@ -3,3 +3,4 @@ python-dotenv
 time
 PySimpleGUI
 operator
+json
